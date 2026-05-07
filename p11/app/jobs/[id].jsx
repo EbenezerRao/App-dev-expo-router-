@@ -1,13 +1,13 @@
 import {View, Text, StyleSheet} from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
 
-export default function Type() {
-    const {type} = useLocalSearchParams();
+export default function Jobs(){
+    const {id} = useLocalSearchParams();
 
     return (
-        <View style = {styles.con}>
-        <Stack.Screen options={{title : `Service : ${type }`}} />
-            <Text style = {styles.txt}>Service Type : {type}</Text>
+        <View style={styles.con}>
+            <Stack.Screen options={{title : `Details for Job ID : ${id}`}} />
+            <Text style={styles.txt}>Job ID: {id}</Text>
         </View>
     )
 }
@@ -18,9 +18,8 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems : 'center'
     },
-
     txt : {
         fontSize : 24,
-        fontWeight : 'bold'
+        fontWeight : 'bold' 
     }
 })
